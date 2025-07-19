@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AteorLand - BoxPvP Minecraft Sunucusu</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  body {
+    background: linear-gradient(135deg, #0d3b66, #3e92cc, #97c1e7);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  header {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+    background: linear-gradient(90deg, #1e5f9f, #67a1e5);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 0 0 40% 40% / 30% 30% 10% 10%;
+    animation: fadeInDown 1s ease forwards;
+  }
+  header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #2e74d5, #84a9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGlow 3s ease-in-out infinite alternate;
+  }
+  header p {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: #d0e6ffcc;
+    font-weight: 600;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+  }
+  nav a {
+    text-decoration: none;
+    color: #b9d6ff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    background: rgba(255 255 255 / 0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px transparent;
+  }
+  nav a:hover, nav a.active {
+    background: #4477cc;
+    box-shadow: 0 0 15px #4477cc;
+    color: #e1eaff;
+  }
+  main {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    padding: 0 1rem;
+  }
+  section {
+    margin-bottom: 4rem;
+    background: rgba(255 255 255 / 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    animation: fadeInUp 1s ease forwards;
+  }
+  section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+    color: #a8cdf7;
+    text-shadow: 0 0 10px #4a7ac1aa;
+  }
+  section ul {
+    list-style: none;
+  }
+  section ul li {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-weight: 500;
+  }
+  section ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #5a8be0;
+  }
+  button.discord-btn {
+    background: #3b71d6;
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #e1eaff;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #3b71d6aa;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin: 1.5rem auto 0;
+    max-width: 250px;
+    text-align: center;
+  }
+  button.discord-btn:hover {
+    background: #2754a3;
+    box-shadow: 0 8px 20px #2754a3ee;
+  }
+  .hero-img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    margin-top: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #3b71d6bb;
+    transition: transform 0.4s ease;
+  }
+  .hero-img:hover {
+    transform: scale(1.03);
+  }
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #0a2d66;
+    color: #a8cdf7;
+    font-weight: 600;
+    box-shadow: inset 0 2px 8px #3b71d644;
+  }
+
+  /* Animations */
+  @keyframes fadeInDown {
+    0% {opacity: 0; transform: translateY(-40px);}
+    100% {opacity: 1; transform: translateY(0);}
+  }
+  @keyframes fadeInUp {
+    0% {opacity: 0; transform: translateY(40px);}
+    100% {opacity: 1; transform: translateY(0);}
+  }
+  @keyframes textGlow {
+    0% {text-shadow: 0 0 10px #3b71d6dd, 0 0 20px #3b71d6bb, 0 0 30px #3b71d699;}
+    100% {text-shadow: 0 0 20px #2754a3, 0 0 40px #2754a3, 0 0 60px #2754a3;}
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2.5rem;
+    }
+    nav {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    main {
+      padding: 0 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>AteorLand</h1>
+  <p>BoxPvP Minecraft Sunucusuna Hoş Geldiniz!</p>
+</header>
+
+<nav>
+  <a href="#home" class="active">Anasayfa</a>
+  <a href="#rules">Kurallar</a>
+  <a href="#events">Etkinlikler</a>
+</nav>
+
+<main>
+  <section id="home">
+    <h2>Hoş Geldiniz!</h2>
+    <p>Dünyamıza katıl, BoxPvP heyecanını yaşa ve rakiplerini alt et!</p>
+    <p><strong>Sunucu IP:</strong> <code>play.ateorland.com</code></p>
+    <p><strong>Versiyon:</strong> 1.20.1</p>
+    <button class="discord-btn" onclick="window.open('https://discord.gg/örneklink', '_blank')">Discord’a Katıl</button>
+    <img class="hero-img" src="https://cdn.pixabay.com/photo/2017/05/11/13/42/minecraft-2309692_1280.jpg" alt="Minecraft BoxPvP" />
+  </section>
+
+  <section id="rules">
+    <h2>Sunucu Kuralları</h2>
+    <ul>
+      <li>Herkes birbirine saygılı olmalı.</li>
+      <li>Hile veya modifikasyon kesinlikle yasaktır.</li>
+      <li>Küfür etmek yasaktır.</li>
+      <li>Reklam yapmak yasaktır.</li>
+      <li>Yönetici talimatlarına uyulmalıdır.</li>
+    </ul>
+    <img src="https://cdn.pixabay.com/photo/2016/03/27/21/34/minecraft-1283628_1280.jpg" alt="Minecraft Kurallar" style="width:100%; max-width:400px; border-radius:12px; margin-top:1rem; box-shadow:0 0 15px #3b71d6bb;">
+  </section>
+
+  <section id="events">
+    <h2>Etkinlikler</h2>
+    <ul>
+      <li>Her Cumartesi BoxPvP Turnuvası düzenlenir.</li>
+      <li>Özel günlerde sürpriz hediyeler kazanabilirsiniz.</li>
+      <li>Yeni haritalar ve güncellemeler sürekli eklenmektedir.</li>
+    </ul>
+    <img src="https://cdn.pixabay.com/photo/2021/05/25/09/00/minecraft-6277870_1280.jpg" alt="Minecraft Etkinlik" style="width:100%; max-width:400px; border-radius:12px; margin-top:1rem; box-shadow:0 0 15px #3b71d6bb;">
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 AteorLand BoxPvP Sunucusu | Tüm Hakları Saklıdır</p>
+</footer>
+
+<script>
+  // Menüde aktif link kontrolü
+  const links = document.querySelectorAll('nav a');
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      links.forEach(l => l.classList.remove('active'));
+      e.target.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
